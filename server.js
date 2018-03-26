@@ -4,6 +4,8 @@ const path = require('path'); //Directory path tool
 const http = require('http');
 const app = express();
 
+const api = require('./server/routes/api'); // Accesses api
+
 //Parsers
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false}));
@@ -12,7 +14,8 @@ app.use(bodyParser.urlencoded({ extended: false}));
 app.use(express.static(path.join(__dirname,'dist')));
 
 //Set up our api routes
-//app.use('/api', api);
+//mongodb://<dbuser>:<dbpassword>@ds123929.mlab.com:23929/projectgram
+app.use('/api', api);
 
 //Return other routes to Angular index file
 app.get('*', (req,res) => {
