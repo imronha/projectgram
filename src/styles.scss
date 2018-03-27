@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+
+$bg: #2A3136;
+$text-color: #88949D;
+$accent-color: #00E4AC;
+
+body {
+    background: $bg;
+    color: $text-color;
+    font-family: 'Raleway';
+}
