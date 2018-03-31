@@ -3,7 +3,7 @@
         <div class="project-container">
             <div class="row">
                 <div class="columns small-12 large-10">
-                    <a routerLink='/' class="project-title">{{ project.title }}</a>
+                    <a routerLink='/details/{{ project._id }}' class="project-title">{{ project.title }}</a>
                 </div>
                 <div class="columns small-12 large-2 show-for-large">
                     <!-- Arrow button styling section 5 lecture 22 styling -->
@@ -22,7 +22,7 @@
                 </div>
             </div>
             <p>{{ project.description }}</p>
-            <a routerLink='/' class="cta-btn btn2">More Info</a>
+            <a routerLink='/details/{{ project._id }}' class="cta-btn btn2">More Info</a>
         </div>
     </div>
 </div>

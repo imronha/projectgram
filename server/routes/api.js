@@ -25,5 +25,18 @@ router.get('/projects', function(req,res){
         })
 })
 
+router.get('/details/:id', function(req,res){
+    console.log('Requesting project');
+    project.findById({req.params.id})
+        .exec(function(err, project) {
+            if (err) {
+                console.log('Error getting project');
+            } else {
+                res.json(project);
+                console.log(project);
+            }
+        })
+})
+
 // Allows server.js to access api
 module.exports = router;
