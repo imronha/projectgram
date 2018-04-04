@@ -27,7 +27,7 @@ router.get('/projects', function(req,res){
 
 router.get('/details/:id', function(req,res){
     console.log('Requesting project');
-    project.findById({req.params.id})
+    project.findById(req.params.id)
         .exec(function(err, project) {
             if (err) {
                 console.log('Error getting project');
