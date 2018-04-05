@@ -22,7 +22,7 @@
                 </div>
             </div>
             <!-- Custom pipe to limit description to 130 chars (length.pipe.ts) -->
-            <p>{{ project.description | length: 130 }}</p>
+            <p>{{ project.description }}</p>
             <a routerLink='/details/{{ project._id }}' class="cta-btn btn2">More Info</a>
         </div>
     </div>

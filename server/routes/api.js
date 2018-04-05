@@ -38,5 +38,22 @@ router.get('/details/:id', function(req,res){
         })
 })
 
+router.post('/projects', function(req,res){
+    console.log('Posting a Project');
+    console.log(req.body)
+    var newProject = new project();
+    newProject.title = req.body.title;
+    newProject.url = req.body.url;
+    newProject.description = req.body.description;
+    newProject.save(function(err, addedProject){
+        if (err){
+            console.log('Error adding project')
+        } else {
+            res.json(addedProject);
+        }
+    })
+
+})
+
 // Allows server.js to access api
 module.exports = router;

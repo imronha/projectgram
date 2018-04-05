@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Headers, RequestOptions } from '@angular/http'; // Headers/RequestOptions needed to add project
 import 'rxjs/add/operator/map';
+import { Project } from './project';
+
 
 
 
@@ -18,6 +20,13 @@ export class ProjectService {
 
     getProject(id){
         return this._http.get("/api/details/"+id)
+            .map(result => this.result = result.json());
+    }
+
+    insertProject(project: Project){
+        let headers = new Headers({ 'Content-type' : 'applications/json'});
+        let options = new RequestOptions({ headers: headers });
+        return this._http.post('/api/projects', JSON.stringify(project), options)
             .map(result => this.result = result.json());
     }
 }

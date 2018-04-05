@@ -1,0 +1,25 @@
+<div class="body-blur">
+    <div class="row columns">
+        <h1>Post a project</h1>
+    </div>
+    <form [formGroup]="projectForm" (ngSubmit)="addProject(projectForm.value)">
+        <div class="row">
+            <div class="columns small-12 medium-6">
+                <label>Project Title
+                    <input type="text" name="title" [formControl]="projectForm.controls['title']">
+                </label>
+            </div>
+            <div class="columns small-12 medium-6">
+                <label>URL
+                    <input type="text" name="url" [formControl]="projectForm.controls['url']">
+                </label>
+            </div>
+        </div>
+            <div class="row columns">
+                <label>Description
+                    <textarea name="description" id="description" [formControl]="projectForm.controls['description']"></textarea>
+                </label>
+                <input type="submit" class="cta-btn filled" value="Post Project" [disabled]="!projectForm.valid">
+            </div>
+    </form>
+</div>
