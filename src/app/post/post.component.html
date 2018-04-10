@@ -1,5 +1,6 @@
 <div class="body-blur">
     <div class="row columns">
+        <a routerLink='/' id="back">Back</a>
         <h1>Post a project</h1>
     </div>
     <form [formGroup]="projectForm" (ngSubmit)="addProject(projectForm.value)">
