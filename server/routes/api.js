@@ -40,9 +40,12 @@ router.get('/details/:id', function(req,res){
 
 router.post('/projects', function(req,res){
     console.log('Posting a Project');
-    console.log(req.body)
+    console.log(req.body);
+    console.log(req.body.title);
+    console.log(req.body.url);
+    console.log(req.body.description);
     var newProject = new project();
-    console.log(newProject);
+    console.log('New project being added is:', newProject);
     newProject.title = req.body.title;
     newProject.url = req.body.url;
     newProject.description = req.body.description;

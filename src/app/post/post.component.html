@@ -12,7 +12,7 @@
             </div>
             <div class="columns small-12 medium-6">
                 <label>URL
-                    <input type="text" name="url" [formControl]="projectForm.controls['url']">
+                    <input type="url" name="title" [formControl]="projectForm.controls['url']">
                 </label>
             </div>
         </div>
@@ -24,3 +24,33 @@
             </div>
     </form>
 </div>
+
+<!-- <div class="body-blur">
+  <div class="row columns">
+    <h1>Post a Project</h1>
+  </div>
+
+  <form [formGroup]="projectForm" (ngSubmit)="addProject(projectForm.value)">
+    <div class="row">
+      <div class="columns small-12 medium-6">
+        <label>Title of Project
+          <input type="text" name="title" [formControl]="projectForm.controls['title']">
+        </label>
+        <div class="alert" *ngIf="!projectForm.controls['title'].valid && projectForm.controls['title'].touched">You must specify a title that's at least 15 characters long.</div>
+      </div>
+      <div class="columns small-12 medium-6">
+        <label>URL
+          <input type="text" name="url" [formControl]="projectForm.controls['url']">
+        </label>
+        <div class="alert" *ngIf="!projectForm.controls['url'].valid && projectForm.controls['url'].touched">You must specify a URL.</div>
+      </div>
+    </div>
+      <div class="row columns">
+        <label>Description
+          <textarea name="description" id="description" [formControl]="projectForm.controls['description']"></textarea>
+        </label>
+        <div class="alert" *ngIf="!projectForm.controls['description'].valid && projectForm.controls['description'].touched">You must specify a description that's at least 500 characters long.</div>
+        <input type="submit" class="cta-btn filled" value="Post Project" [disabled]="!projectForm.valid">
+      </div>
+  </form>
+</div> -->

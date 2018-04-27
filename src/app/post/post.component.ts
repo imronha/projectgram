@@ -33,5 +33,6 @@ export class PostComponent implements OnInit {
           this.projects.push(newProject);
           this.router.navigateByUrl('/');
       })
+
   }
 }
